@@ -42,12 +42,19 @@ public class Main extends JFrame implements ActionListener{
         //create submenus
         JMenuItem a = new JMenuItem("a");
         a.addActionListener(this);
+        a.setActionCommand("a");
+
         JMenuItem b = new JMenuItem("b");
         b.addActionListener(this);
+        b.setActionCommand("b");
+
         JMenuItem c = new JMenuItem("c");
         c.addActionListener(this);
+        c.setActionCommand("c");
+
         JMenuItem d = new JMenuItem("d");
         d.addActionListener(this);
+        d.setActionCommand("d");
 
         //tie everything together
         file.add(a);
@@ -62,6 +69,24 @@ public class Main extends JFrame implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         // TODO Auto-generated method stub
+
+        System.out.println("a menu was clicked");
+        String cmd = e.getActionCommand();
+
+        switch (cmd) {
+            case "a":
+                //TODO
+                break;
+            case "b":
+                //TODO
+                break;
+            case "c":
+                //TODO
+                break;
+            case "d":
+                //TODO
+                break;
+        }
         
     }
 }
