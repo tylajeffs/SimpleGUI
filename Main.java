@@ -2,6 +2,7 @@ import javax.swing.*;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.Color;
 
 public class Main extends JFrame implements ActionListener{
 
@@ -75,16 +76,16 @@ public class Main extends JFrame implements ActionListener{
 
         switch (cmd) {
             case "a":
-                //TODO
+                mainPanel.setCircleColor(Color.RED);
                 break;
             case "b":
-                //TODO
+                mainPanel.setCircleColor(Color.GREEN);
                 break;
             case "c":
-                //TODO
+                mainPanel.setCircleColor(Color.MAGENTA);
                 break;
             case "d":
-                //TODO
+                mainPanel.setCircleColor(Color.BLACK);
                 break;
         }
         

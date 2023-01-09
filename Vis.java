@@ -5,11 +5,11 @@ import java.awt.Color;
 
 public class Vis extends JPanel {
 
-    private Color yellow;
+    private Color currentColor;
 
     public Vis() {
         super();
-        yellow = Color.YELLOW;
+        currentColor = Color.YELLOW;
         
     }
 
@@ -18,8 +18,13 @@ public class Vis extends JPanel {
         //TODO typecast Graphics to Graphics2D
         //TODO draw some simple shapes
 
-        g1.setColor(yellow);
-        g1.fillOval(50,50,100,100);
+        g1.setColor(currentColor);
+        g1.fillOval(150,150,100,100);
+    }
+
+    public void setCircleColor(Color c) {
+        currentColor = c;
+        repaint();
     }
 
 }
