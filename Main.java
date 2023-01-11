@@ -2,11 +2,14 @@ import javax.swing.*;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.DriverManager;
 import java.awt.Color;
+import java.sql.*;
 
 public class Main extends JFrame implements ActionListener{
 
     private Vis mainPanel;
+    
 
     public Main() {
 
@@ -76,7 +79,18 @@ public class Main extends JFrame implements ActionListener{
 
         switch (cmd) {
             case "a":
-                mainPanel.setCircleColor(Color.RED);
+                mainPanel.setCircleColor(new Color(255, 192, 203));
+
+                try {
+                    Connection c = DriverManager.getConnection("jdbc:derby:cs490r");
+                    Statement s = c.createStatement();
+                    ResultSet rs = s.executeQuery("select count(*) from students");
+                    rs.next();
+                    int thisNum = rs.getInt(1);
+                    System.out.println("There are " + thisNum + " rows in the table");
+                } catch (SQLException ex) {
+                    System.out.println("can't connect to the database");
+                }
                 break;
             case "b":
                 mainPanel.setCircleColor(Color.GREEN);
